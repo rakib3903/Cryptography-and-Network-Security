@@ -9,7 +9,7 @@ int main(){
 
     string cipher = "";
     for(int i = 0; i < s.size(); i++){
-        char encryptedChar = (((s[i] - 'A') + (word[i]  - 'A')) % 26) + 'A';
+        char encryptedChar = (((s[i] - 'A') + (word[i]  - 'A') + 1) % 26) + 'A';
         cipher += encryptedChar;
     }
     cout<< "Cipher Text is : " << cipher<<endl;
@@ -26,7 +26,7 @@ int main(){
 
     string decrypt = "";
     for(int i = 0; i < cipher.size(); i++){
-        char decryptedChar = (((cipher[i] - 'A') - (word[i]  - 'A')) % 26) + 'A';
+        char decryptedChar = (((cipher[i] - 'A') - (word[i]  - 'A') + 25) % 26) + 'A';
         decrypt += decryptedChar;
     }
     cout<< "Decrypt Text is : " << decrypt<<endl;
